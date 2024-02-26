@@ -1,0 +1,1 @@
+export * from './update-admin-account-password-form';

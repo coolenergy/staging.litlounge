@@ -1,0 +1,84 @@
+name: xc
+services:
+  mongo:
+    image: mongo:4.2
+    container_name: mongo
+    restart: always
+    volumes:
+      - mongo_data_db:/data/db
+      - mongo_data_configdb:/data/configdb
+    ports:
+      - 27017:27017
+    networks:
+      - xc
+  redis:
+    image: redis:2.8
+    container_name: redis
+    restart: always
+    volumes:
+      - redis_data:/data
+    ports:
+      - 6379:6379
+    networks:
+      - xc
+  api:
+    image: xc-api
+    container_name: api
+    restart: always
+    volumes:
+      - ${PWD}/api/.env:/usr/src/xc/api/.env
+      - ${PWD}/api/public:/usr/src/xc/api/public
+    ports:
+      - 8080:8080
+    networks:
+      - xc
+  user:
+    depends_on: [api]
+    image: xc-user
+    container_name: user
+    restart: always
+    volumes:
+      - ${PWD}/user/.env:/usr/src/xc/user/.env
+    ports:
+      - 8081:8081
+    networks:
+      - xc
+  admin:
+    depends_on: [api]
+    image: xc-admin
+    container_name: admin
+    restart: always
+    ports:
+      - 8082:8082
+    networks:
+      - xc
+  client:
+    depends_on: [api]
+    image: xc-client
+    container_name: client
+    restart: always
+    ports:
+      - 8083:8083
+    networks:
+      - xc
+  nginx:
+    image: nginx:1.22
+    container_name: nginx
+    restart: always
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt
+      - ${PWD}/api/nginx.conf:/etc/nginx/conf.d/api.conf
+      - ${PWD}/user/nginx.conf:/etc/nginx/conf.d/user.conf
+      - ${PWD}/admin/nginx.conf:/etc/nginx/conf.d/admin.conf
+      - ${PWD}/client/nginx.conf:/etc/nginx/conf.d/client.conf
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - xc
+volumes:
+  mongo_data_db:
+  mongo_data_configdb:
+  redis_data:
+networks:
+  xc:

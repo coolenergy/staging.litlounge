@@ -1,0 +1,12 @@
+export const EMAIL_OR_PASSWORD_INCORRECT = 'Email or Password is incorrect';
+export const USERNAME_OR_PASSWORD_INCORRECT = 'Username or Password is incorrect';
+export const EMAIL_NOT_VERIFIED = 'Email is not verified yet';
+export const ACCOUNT_EXISTED = 'Account is already existed';
+export const CANNOT_AUTHENTICATE = 'Could not authenticate';
+export const ACCOUNT_NOT_FOUND = 'Account is not found';
+export const USERNAME_HAS_BEEN_TAKEN = 'This username has been taken';
+export const EMAIL_HAS_BEEN_TAKEN = 'This email has been taken';
+export const ACCOUNT_INACTIVE = 'Your account has been deactivated';
+export const DOCUMENT_MISSING = 'Document is required';
+export const PASSWORD_INCORRECT = 'Password is incorrect';
+export const ACCOUNT_PENDING = 'Wait for the admin approval';

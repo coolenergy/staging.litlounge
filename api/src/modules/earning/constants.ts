@@ -1,0 +1,1 @@
+export const EARNING_CHANNEL = 'EARNING_CHANNEL';

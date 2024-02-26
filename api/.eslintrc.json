@@ -1,0 +1,37 @@
+{
+  "extends": ["airbnb", "prettier"],
+  "plugins": ["@typescript-eslint"],
+  "parser": "@typescript-eslint/parser",
+  "rules": {
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "error",
+    "import/no-unresolved": 0,
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never",
+        "": "never"
+      }
+   ],
+   "import/prefer-default-export": 0,
+   "no-underscore-dangle": 0,
+   "max-classes-per-file": 0,
+   "max-len": 0,
+   "max-lines": 0,
+   "no-useless-constructor": 0,
+   "no-empty-function": 0,
+   "comma-dangle": ["error", "never"],
+   "class-methods-use-this": 0,
+   "no-unused-expressions": 0,
+   "@typescript-eslint/camelcase": 0
+  },
+  "env": {
+    "commonjs": true,
+    "node": true,
+    "jest": true
+  }
+}

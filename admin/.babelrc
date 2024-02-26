@@ -1,0 +1,12 @@
+{
+  "presets": ["next/babel"],
+  "plugins": [
+    // Conflicting order between: https://github.com/ant-design/ant-design/issues/15696
+    // [
+    //   "import", {
+    //     "libraryName": "antd",
+    //     "style": true
+    //   }
+    // ]
+  ]
+}
