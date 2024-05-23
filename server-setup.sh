@@ -8,7 +8,7 @@ apt-get --yes install \
 sys_arch=$(dpkg --print-architecture)
 sys_code=$(lsb_release --codename --short)
 
-apt_keys=/etc/apt/keyrings
+apt_keys=/etc/apt/keyrings 
 apt_srcs=/etc/apt/sources.list.d
 
 mkdir -p $apt_keys
