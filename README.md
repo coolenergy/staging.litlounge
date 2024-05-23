@@ -9,7 +9,7 @@ Struture
 
 ### Author
 - Sales: contact@adent.io 
-- Technical: tuong.tran@outlook.com 
+- Technical: tuong.tran@outlook.com
 
 ## Setup
 
