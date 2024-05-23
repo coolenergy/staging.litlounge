@@ -11,7 +11,7 @@ sys_code=$(lsb_release --codename --short)
 apt_keys=/etc/apt/keyrings
 apt_srcs=/etc/apt/sources.list.d
 
-mkdir -p $apt_keys
+mkdir -p $apt_keys 
 
 # DOCKER INSTALLATION
 docker_version=5:20.10.22~3-0~ubuntu-$sys_code
