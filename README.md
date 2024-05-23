@@ -8,7 +8,7 @@ Struture
 - `admin`: the management website for administrator
 
 ### Author
-- Sales: contact@adent.io
+- Sales: contact@adent.io 
 - Technical: tuong.tran@outlook.com
 
 ## Setup
